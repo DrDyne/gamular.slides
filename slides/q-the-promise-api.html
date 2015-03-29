@@ -1,0 +1,28 @@
+<h2> $q- the promise API</h2>
+
+<br>
+
+<pre><code class="javascript" data-trim>
+function myCtrl ($q, $scope) {
+  getUser(123)
+  .then(function (user) {
+    $scope.user = user;
+    return user.name;
+  })
+  .then(function sayHello (name) {
+    greet(name);
+    return name // we're stuck now
+  })
+  .then(function sayGoodbye(name) {
+    goodbye(name);
+    return name;
+  })
+}
+</code></pre>
+
+<aside class="notes">
+  <p>It's important to return values so that the code is streamlined</p>
+  <p>$resources adresse the "stuck" problem</p>
+  <p>use angular router's resolve feature to avoid instanciating controllers in dirty state</p>
+  <p>don't rely on $scope ! in most cases, you want to split the promise in different files with different responsibilities</p>
+</aside>

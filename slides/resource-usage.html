@@ -1,0 +1,40 @@
+<h2>$resource - Usage</h2>
+
+<br>
+
+<div style="text-align: center;">
+  <div style="display: inline-block;">
+    <h5>Class</h5>
+
+    <ul>
+      <li>get</li>
+      <li>save</li>
+      <li>query</li>
+      <li>remove</li>
+      <li>delete</li>
+    </ul>
+  </div>
+
+  <div style="display: inline-block; vertical-align: top; margin-left: 40px;">
+    <h5>Instance</h5>
+
+    <ul>
+      <li>$save</li>
+      <li>$remove</li>
+      <li>$delete</li>
+    </ul>
+  </div>
+</div>
+
+<br>
+
+<blockquote style="text-align: left;">
+  <p>HTTP GET "class" actions: Resource.action(...)</p>
+  <p>non-GET "class" actions: Resource.action(...)</p>
+  <p>non-GET instance actions: instance.$action(...)</p>
+</blockquote>
+
+<aside class="notes">
+  <p>Class have access to all actions</p>
+  <p>Instance only have access to non-GET actions (no query/get/...)</p>
+</aside>

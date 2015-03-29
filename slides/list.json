@@ -1,0 +1,17 @@
+[
+    "index.md",
+    "presentation.md",
+    "forewords.html",
+    "demo.html",
+    "promises.html",
+    "q-thensuccess-error-notify.html",
+    "q-the-deferred-api.html",
+    "q-the-promise-api.html",
+    "q-reject-when-all.html",
+    "resource.html",
+    "resource-quote.html",
+    "resource-usage.html",
+    "resource-crud-more.html",
+    "demo-code.html",
+    "questions.html"
+]

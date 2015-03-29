@@ -1,0 +1,29 @@
+<h2>$resource - custom actions</h2>
+
+<br>
+
+<pre><code class="javascript" data-trim>
+var CreditCard = $resource('/user/:userId/card/:cardId',
+  {userId:123, cardId:'@id'}, {
+  charge: {method:'POST', params:{charge:true}}
+});
+</code></pre>
+
+<pre><code class="javascript" data-trim>
+CreditCard.query().$promise // flavor 1: Class
+.then(function (cards) {
+  return cards[0].$charge({amount: 9.99}); //because each card is an instance !
+  // POST: /user/123/card/456?amount=9.99&charge=true {id:456, number:'1234'}
+});
+</code></pre>
+
+<pre><code class="javascript" data-trim>
+var card2 = new CreditCard({number:'0123'}); // flavor 2: Instance
+newCard.name = "Bob";
+newCard.$save(); // POST: /user/123/card {number:'0123', name:'Bob'}
+</code></pre>
+
+<aside class="notes">
+  <p>flavor 1 works well when dealing with collections</p>
+  <p>flavor 2 works well with creating stuff</p>
+</aside>

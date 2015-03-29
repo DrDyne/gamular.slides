@@ -1,0 +1,22 @@
+<h2>$q - .reject(), .when(), .all()</h2>
+
+<br>
+
+<pre><code class="javascript" data-trim>
+$q.all({
+  aModel: fetchA().then(fetchASiblings),
+  bModel: fetchB(),
+  err: $q.reject('did not work'), // creates a rejected promise
+  msg: $q.when('it worked'), // creates a resolved promise
+})
+.then(concatData) //receives {aModel:.., bModel:.., err:.., msg: ..}
+.then(filterData)
+.finally(function () {
+  // no arguments
+})
+
+</code></pre>
+
+<aside class="notes">
+  <p>$q.all also works with an array</p>
+</aside>

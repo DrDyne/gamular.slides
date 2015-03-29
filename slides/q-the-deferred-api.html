@@ -1,0 +1,28 @@
+<h2>$q - the deferred API</h2>
+
+<br>
+
+<pre><code class="javascript" data-trim>
+function getUser (id) {
+  var deferred = $q.defer();
+
+  jQuery.get('/api/users/' + id, function onSuccess (user) {
+    deferred.resolve(user);
+  }, function onError (err) {
+    deferred.reject(err);
+  });
+
+  return deferred.promise;
+}
+</code></pre>
+
+
+<aside class="notes">
+  <p> deferred.resolve </p>
+  <p> deferred.reject </p>
+  <p> deferred.notify </p>
+
+  callback hell in jquery 
+
+  <p>also a way to adapt 3rd party libraries or x API calls (but don't abuse it)</p>
+</aside>
